@@ -9,7 +9,12 @@ This project is a web-based deepfake detection system where users can upload ima
 - **Rate Limiting**: To prevent abuse, the system limits the number of uploads a user can make within a certain time period.
   
 ## Project Structure
-├── app.py # Flask application backend ├── templates │ └── index.html # HTML file for frontend ├── static │ └── style.css # CSS file for styling ├── uploads # Directory for storing uploaded images ├── deepfake_model.pkl # Pre-trained deepfake detection model └── README.md # Project documentation
+├── app.py # Flask application backend 
+├── templates │ └── index.html # HTML file for frontend 
+├── static │ └── style.css # CSS file for styling 
+├── uploads # Directory for storing uploaded images 
+├── deepfake_model.pkl # Pre-trained deepfake detection model 
+└── README.md # Project documentation
 
 
 
