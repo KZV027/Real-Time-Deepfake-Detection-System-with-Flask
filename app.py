@@ -9,6 +9,13 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
 app = Flask(__name__)
+from redis import Redis
+
+limiter = Limiter(
+    get_remote_address,
+    app=app,
+    storage_uri="redis://localhost:6379"  # or your Redis server URI
+)
 
 
 limiter = Limiter(
@@ -80,10 +87,10 @@ def upload_file():
             prediction = model.predict(img)[0][0]  
 
             # Determine if it's a real or fake based on the prediction
-            if prediction < 0.5:
-                result = "Real"
-            else:
+            if prediction <= 0.7:
                 result = "Fake"
+            else:
+                result = "Real"
 
             return jsonify({"alert": f"The image is {result} with a confidence of {prediction:.2f}"}), 200
         else:
