@@ -60,7 +60,7 @@ sudo service redis-server start
 ## How to Run the App
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/deepfake-detection-app.git
+git clone https://github.com/KZV027/deepfake-detection-app.git
 cd deepfake-detection-app
 
 ``` 
